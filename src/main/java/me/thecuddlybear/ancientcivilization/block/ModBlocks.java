@@ -22,8 +22,6 @@ public class ModBlocks {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, Ancientcivilization.MODID);
 
     // Block Entities
-    public static final RegistryObject<BlockEntityType<SculkEnergyStorageBlockEntity>> SCULK_ENERGY_STORAGE_BLOCK_ENTITY = BLOCK_ENTITIES.register("SCULK_ENERGY_STORAGE_BLOCK_ENTITY", () -> BlockEntityType.Builder.of(SculkEnergyStorageBlockEntity::new, validBlock).build(null));
-
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn);
