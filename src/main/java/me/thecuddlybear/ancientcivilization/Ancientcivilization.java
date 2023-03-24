@@ -2,6 +2,7 @@ package me.thecuddlybear.ancientcivilization;
 
 import com.mojang.logging.LogUtils;
 import me.thecuddlybear.ancientcivilization.block.ModBlocks;
+import me.thecuddlybear.ancientcivilization.item.ModItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -25,8 +26,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.slf4j.Logger;
 
-import static me.thecuddlybear.ancientcivilization.block.ModBlocks.EXAMPLE_BLOCK_ITEM;
-
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(Ancientcivilization.MODID)
 public class Ancientcivilization {
@@ -44,7 +43,7 @@ public class Ancientcivilization {
         // Register the Deferred Register to the mod event bus so blocks get registered
         ModBlocks.BLOCKS.register(modEventBus);
         // Register the Deferred Register to the mod event bus so items get registered
-        ModBlocks.ITEMS.register(modEventBus);
+        ModItems.ITEMS.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
@@ -60,8 +59,8 @@ public class Ancientcivilization {
     }
 
     private void addCreative(CreativeModeTabEvent.BuildContents event) {
-        if (event.getTab() == CreativeModeTabs.BUILDING_BLOCKS)
-            event.accept(EXAMPLE_BLOCK_ITEM);
+        /*if (event.getTab() == CreativeModeTabs.BUILDING_BLOCKS)
+            event.accept(EXAMPLE_BLOCK_ITEM);*/
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
