@@ -31,7 +31,7 @@ import org.slf4j.Logger;
 public class Ancientcivilization {
 
     // Define mod id in a common place for everything to reference
-    public static final String MODID = "AncientCivilization";
+    public static final String MODID = "ancientcivilization";
     // Directly reference a slf4j logger
     private static final Logger LOGGER = LogUtils.getLogger();
     public Ancientcivilization() {
